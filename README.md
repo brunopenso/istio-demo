@@ -1,11 +1,12 @@
 # Istio DEMO on AWS Provider
 
-The objective of this repo is to create a kubernets cluster to run and play with istio services.
+The objective of this repo is to create a kubernets cluster to play with istio services.
 
 1. Create a AWS Account
-1. Create to EC2 t2.medium machines in the same *security group* with the **ubuntu** image
-1. Download the pem file to your machine
-1. Choose on machine to be the master
+1. Create two(2) ubuntu EC2 machines with this hardware **t2.medium**
+1. Choose the same security group for both machines
+1. Download the pem file to your local machine
+1. Choose a machine to be the master
 1. Configure all stuffs
 
 ## How to connect to EC2
@@ -43,6 +44,7 @@ apt-get install kubelet kubectl kubeadm
 </details>
 
 ## Configure the master node
+Connect to the EC2 
 
 ```bash
 kubeadm config images pull
@@ -55,7 +57,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 kubectl apply -f  "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version| base64 | tr -d '\n')".yaml
 ```
-Tip: Save the output of the command for future use
+*Tip:* Save the output of the command for future use
 
 ## Join nodes to master
 
