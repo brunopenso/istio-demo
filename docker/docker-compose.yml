@@ -6,7 +6,11 @@ services:
     image: brunopenso/istiodemo_product
     container_name: istiodemo_product
     ports:
-      - "3001:3000"
+      - "3001:3001"
+    environment:
+      - 'APPLICATION_PORT=3001'
+      - 'DETAIL_SERVICE_PORT=3002'
+      - 'DETAIL_HOSTNAME=productdetailsrv'
     networks: 
       - network
   productdetailsrv:
@@ -14,7 +18,9 @@ services:
     image: brunopenso/istiodemo_productdetail
     container_name: istiodemo_productdetail
     ports:
-      - "3002:3000"
+      - "3002:3002"
+    environment:
+      - 'APPLICATION_PORT=3002'
     networks: 
       - network
 networks:

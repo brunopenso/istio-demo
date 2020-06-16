@@ -1,8 +1,9 @@
 var express = require('express');
 var app = express();
 var axios = require('axios');
-const port = process.env.APPLICATION_PORT ? process.env.APPLICATION_PORT : 3001
-
+const port = process.env.APPLICATION_PORT ? process.env.APPLICATION_PORT : 3000
+const detailServicePort = process.env.DETAIL_SERVICE_PORT ? process.env.DETAIL_SERVICE_PORT : 3000
+const detailServiceHostName = process.env.DETAIL_HOSTNAME ? process.env.DETAIL_HOSTNAME : 'localhost'
 const products = [
   {  
       "sku": 4433,
@@ -37,7 +38,7 @@ app.listen(port, function () {
 
 const getData = async (code) => {
   try {
-    return await axios.get('http://localhost:3000/'+code)
+    return await axios.get(`http://${detailServiceHostName}:${detailServicePort}/${code}`)
   } catch (error) {
     console.error('Axios error', error)
   }
