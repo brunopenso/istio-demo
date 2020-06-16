@@ -83,7 +83,7 @@ Get the node port from jaeger-query
 
 `kubectl port-forward svc/jaeger-query 16686:16686 -n istio-system --address 0.0.0.0`
 
-*address: 0.0.0.0* > will bind to all ip addresses
+Open http://35.172.216.112:16686/ on your browser. User and password are admin
 
-
+Tip: *address: 0.0.0.0* will bind to all ip address
 
