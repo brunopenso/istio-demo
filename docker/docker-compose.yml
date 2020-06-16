@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  productsrv:
+    build: product/.
+    image: brunopenso/istiodemo_product
+    container_name: istiodemo_product
+    ports:
+      - "3001:3000"
+    networks: 
+      - network
+  productdetailsrv:
+    build: productDetails/.
+    image: brunopenso/istiodemo_productdetail
+    container_name: istiodemo_productdetail
+    ports:
+      - "3002:3000"
+    networks: 
+      - network
+networks:
+  network:
+    driver: bridge
