@@ -7,6 +7,7 @@ The objective of this repo is to create a kubernets cluster to play with istio s
 - Set up AWS, click [here](setup_aws.md)
 - Set up Kubernets, click [here](setup_kubernetes.md)
 - Set up Istio, click [here](setup_istio.md)
+- Set up my test application, click [here](setup_myapp.md)
 
 Tips:
 - Remover to stop all EC2 machine to avoid extra costs
