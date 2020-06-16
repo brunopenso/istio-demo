@@ -121,7 +121,12 @@ Let's access the Kiali.
 
 Get the node port and expose it
 
+Kiali
+
 `kubectl port-forward svc/kiali 20001:20001 -n istio-system --address 0.0.0.0`
+
+Jaeger
+`kubectl port-forward svc/jaeger 16686:16686 -n istio-system --address 0.0.0.0`
 
 *address: 0.0.0.0* > will bind to all ip addresses
 
