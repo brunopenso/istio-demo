@@ -20,7 +20,7 @@ kind: ServiceAccount
 metadata:
   name: product
   labels:
-    account: product_account
+    account: product-account
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -41,7 +41,7 @@ spec:
         app: productsrv
         version: v1
     spec:
-      serviceAccountName: product_account
+      serviceAccountName: product-account
       containers:
       - name: product
         image: docker.io/brunopenso/istiodemo_product:1.0
@@ -74,7 +74,7 @@ kind: ServiceAccount
 metadata:
   name: productdetailsrv
   labels:
-    account: productdetailsrv_account
+    account: productdetailsrv-account
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -95,7 +95,7 @@ spec:
         app: productdetailsrv
         version: v1
     spec:
-      serviceAccountName: productdetailsrv_account
+      serviceAccountName: productdetailsrv-account
       containers:
       - name: productdetailsrv
         image: docker.io/brunopenso/istiodemo_productdetail:1.0
