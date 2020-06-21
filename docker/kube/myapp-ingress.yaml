@@ -28,5 +28,5 @@ spec:
       - path: /products
         backend:
           serviceName: productsrv
-          servicePort: 3001
+          servicePort: 3000
 ---
