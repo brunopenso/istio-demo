@@ -47,14 +47,10 @@ spec:
         image: docker.io/brunopenso/istiodemo_product:1.0
         imagePullPolicy: IfNotPresent
         ports:
-          - containerPort: 3001
+          - containerPort: 3000
         env:
-          - name: APPLICATION_PORT
-            value: 3001
           - name: DETAIL_HOSTNAME
             value: productdetailsrv
-          - name: DETAIL_SERVICE_PORT
-            value: 3002
 ---
 ##################################################################################################
 # Product details service
@@ -68,7 +64,7 @@ metadata:
     service: productdetailsrv
 spec:
   ports:
-  - port: 3002
+  - port: 3000
     name: http
   selector:
     app: productdetailsrv
@@ -105,7 +101,4 @@ spec:
         image: docker.io/brunopenso/istiodemo_productdetail:1.0
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 3002
-        env:
-          - name: APPLICATION_PORT
-            value: 3002
+        - containerPort: 3000
